@@ -721,6 +721,7 @@ EOF
 
     # ── Journald ──────────────────────────────────────────────────────────────
     if [[ $DRY_RUN -eq 0 ]]; then
+        sudo mkdir -p /etc/systemd/journald.conf.d
         sudo tee /etc/systemd/journald.conf.d/90-alpi.conf >/dev/null <<'EOF'
 [Journal]
 Storage=persistent
